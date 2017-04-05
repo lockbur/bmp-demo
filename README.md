@@ -1,2 +1,9 @@
-# bmp-demo
-bmp-demo 自己的工作流项目
+# 工作流学习
+1 不需要初始化数据表，在spring容器中启动时，自动回创建工作流相关的表结构
+2 导入sql下的测试数据
+3 http://localhost:8080/simple/index
+4 使用junhui/000000登录系统
+5 部署流程，选在resource/bpmn/simple.flow.bpmn,点击提交流程定义
+6 启动流程
+7 认领任务
+8 执行任务
