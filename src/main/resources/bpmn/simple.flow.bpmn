@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1491373107796" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
-  <process id="simpleflow" isClosed="false" isExecutable="true" name="绠�鍗曠殑璇峰亣娴佺▼瀹炰緥" processType="None">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1491385237004" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
+  <process id="simpleflow" isClosed="false" isExecutable="true" name="缁狅拷閸楁洜娈戠拠宄颁海濞翠胶鈻肩�圭偘绶�" processType="None">
     <startEvent id="startevent1" name="Start"/>
-    <userTask activiti:assignee="${owner}" activiti:async="true" activiti:exclusive="false" id="usertask1" name="鐢宠">
+    <userTask activiti:assignee="${owner}" activiti:exclusive="true" id="usertask1" name="閻㈠疇顕�">
       <extensionElements>
-        <activiti:formProperty id="day" name="澶╂暟" required="true" type="string"/>
-        <activiti:formProperty id="reason" name="鍘熷洜" type="string"/>
+        <activiti:formProperty id="day" name="婢垛晜鏆�" required="true" type="string"/>
+        <activiti:formProperty id="reason" name="閸樼喎娲�" type="string"/>
       </extensionElements>
     </userTask>
     <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="usertask1"/>
-    <userTask activiti:candidateUsers="huyang,junhui" activiti:exclusive="true" id="usertask2" name="缁忕悊瀹℃壒"/>
+    <userTask activiti:candidateUsers="huyang,junhui" activiti:exclusive="true" id="usertask2" name="缂佸繒鎮婄�光剝澹�"/>
     <sequenceFlow id="flow2" sourceRef="usertask1" targetRef="usertask2"/>
     <exclusiveGateway gatewayDirection="Unspecified" id="exclusivegateway1" name="Exclusive Gateway"/>
     <sequenceFlow id="flow3" sourceRef="usertask2" targetRef="exclusivegateway1"/>
     <endEvent id="endevent1" name="End"/>
-    <sequenceFlow id="flow4" name="灏忎簬3澶�" sourceRef="exclusivegateway1" targetRef="endevent1">
+    <sequenceFlow id="flow4" name="鐏忓繋绨�3婢讹拷" sourceRef="exclusivegateway1" targetRef="endevent1">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${day<=3}]]></conditionExpression>
     </sequenceFlow>
-    <userTask activiti:candidateGroups="hr" activiti:exclusive="true" id="usertask3" name="浜轰簨瀹℃壒"/>
-    <sequenceFlow id="flow5" name="澶т簬3澶�" sourceRef="exclusivegateway1" targetRef="usertask3">
+    <userTask activiti:candidateGroups="hr" activiti:exclusive="true" id="usertask3" name="娴滆桨绨ㄧ�光剝澹�"/>
+    <sequenceFlow id="flow5" name="婢堆傜艾3婢讹拷" sourceRef="exclusivegateway1" targetRef="usertask3">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${day>3}]]></conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="flow6" sourceRef="usertask3" targetRef="endevent1"/>
@@ -56,7 +56,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="usertask3" id="Shape-usertask3">
-        <omgdc:Bounds height="55.0" width="105.0" x="394.0" y="190.0"/>
+        <omgdc:Bounds height="55.0" width="105.0" x="390.0" y="190.0"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="55.0" width="105.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
@@ -97,7 +97,7 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6" sourceElement="usertask3" targetElement="endevent1">
-        <omgdi:waypoint x="499.0" y="217.5"/>
+        <omgdi:waypoint x="495.0" y="217.5"/>
         <omgdi:waypoint x="546.0" y="106.0"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>

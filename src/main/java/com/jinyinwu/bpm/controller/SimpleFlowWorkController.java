@@ -274,6 +274,7 @@ public class SimpleFlowWorkController {
 
         //签收任务
         taskService.claim(taskId,userId);
+        taskService.addCandidateUser(taskId,"");
 
         return "redirect:/simple/index";
     }
